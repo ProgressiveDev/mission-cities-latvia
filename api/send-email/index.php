@@ -27,7 +27,7 @@ if (!empty($_POST) && !empty($_POST['email']) && !empty($_POST['firstname']) && 
 
         //Recipients
         $mail->setFrom('info@missioncitieslatvia.com', 'Mission Cities Latvia');
-        $mail->addAddress('zigmunds.laposko@gmail.com', 'info');
+        $mail->addAddress('annija.tropa@vefresh.com', 'annija.tropa');
         $mail->addReplyTo($_POST['email'], $_POST['firstname']);
 
         //Content
