@@ -1,0 +1,118 @@
+@import "_colors.scss";
+
+#contact {
+    .container {
+        margin: auto;
+        display: flex;
+        padding: 7em 1em;
+        display: flex;
+        flex-direction: column;
+        max-width: 1000px;
+        h2 {
+            font-weight: 400;
+            font-size: 5.125em;
+        }
+        p {
+            margin-top: 1.5em;
+            font-size: 1.75em;
+        }
+        .form_ {
+            &_partners {
+                display: flex;
+                margin-top: 2em;
+                margin-bottom: 1em;
+                @include lt-sm {
+                    flex-direction: column;
+                    font-size: 0.8em;
+                }
+                .partner {
+                    @include lt-sm {
+                        margin-bottom: 2.5em;
+                    }
+                    input {
+                        display: none;
+
+                        &:checked + label {
+                            border: 2px solid $c-primary-accent;
+                        }
+                    }
+                    label {
+                        transition: 0.2s all;
+                        cursor: pointer;
+                        font-size: 1.25em;
+                        text-transform: uppercase;
+                        border: 2px solid $c-primary-text;
+                        border-radius: 1em;
+                        padding: 0.5em 1.5em;
+                        width: 250px;
+                        display: inline-block;
+                        text-align: center;
+                        @include lt-md {
+                            width: 150px;
+                        }
+                    }
+                }
+            }
+            &_fields {
+                margin-top: 3em;
+                display: flex;
+                justify-content: space-between;
+                @include lt-sm {
+                    margin-top: 1em;
+                }
+                input {
+                    width: 45%;
+                    background-color: transparent;
+                    box-shadow: none;
+                    border: none;
+                    border-bottom: 2px solid #707070;
+                    color: #707070;
+                    font-family: "TT Firs Neue";
+                    font-size: 1.125em;
+                    padding: 0.5em 0.1em;
+                }
+            }
+            &_message {
+                margin-top: 3em;
+                p {
+                    color: #707070;
+                    font-size: 1.125em;
+                }
+                textarea {
+                    margin-top: 1em;
+                    width: 100%;
+                    min-height: 8em;
+                    background-color: transparent;
+                    box-shadow: none;
+                    font-size: 1.125em;
+                    border: none;
+                    color: $c-primary-text;
+                    font-family: "TT Firs Neue";
+                    border: 2px solid #707070;
+                }
+            }
+            .btn_ {
+                &_submit {
+                    color: $c-primary-dark;
+                    background-color: $c-primary-accent;
+                    text-decoration: none;
+                    font-size: 1.2em;
+                    width: 100%;
+                    max-width: 12em;
+                    text-align: center;
+                    min-height: 4em;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 5em;
+                    margin-top: 2em;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    @include lt-md {
+                        align-self: center;
+                    }
+                }
+            }
+        }
+    }
+}

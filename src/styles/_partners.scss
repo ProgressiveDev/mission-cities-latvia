@@ -1,0 +1,121 @@
+@import "_colors.scss";
+
+#partner {
+    &-liepaja,
+    &-riga {
+        margin-top: 7em;
+        margin-bottom: 7em;
+        .container {
+            .partner__image {
+                width: 100%;
+            }
+        }
+        .partner__image {
+            max-width: 300px;
+            margin: auto;
+        }
+    }
+    &-riga {
+        .partner__hero {
+            background: url(/assets/images/riga.png);
+            background-size: cover;
+            padding: 7em 1em;
+            display: flex;
+        }
+    }
+    &-liepaja {
+        .partner__hero {
+            background: url(/assets/images/liepaja.png);
+            background-size: cover;
+            padding: 7em 1em;
+            display: flex;
+        }
+    }
+}
+
+.partner {
+    padding-left: 1em;
+    padding-right: 1em;
+    .container {
+        margin: auto;
+        &.info-text {
+            font-size: 1em;
+            letter-spacing: 0.2em;
+            padding-bottom: 0.5em;
+            font-weight: 300;
+        }
+        &.vefresh {
+            background-color: white;
+            display: flex;
+            padding: 10em 2em;
+            img {
+                width: 100%;
+                max-width: 508px;
+                margin: auto;
+            }
+        }
+        &.small {
+            display: flex;
+            justify-content: flex-end;
+            @include lt-md {
+                font-size: 0.8em;
+            }
+            .col {
+                width: 90%;
+                @include lt-md {
+                    width: 100%;
+                }
+            }
+            p {
+                font-size: 1.625em;
+                padding-top: 5em;
+                padding-bottom: 5em;
+                margin: 0;
+                max-width: 900px;
+            }
+            a {
+                font-size: 1.625em;
+                text-decoration: underline;
+                color: $c-primary-text;
+            }
+        }
+        &.portfolio {
+            display: flex;
+            flex-direction: column;
+            .scroller {
+                display: flex;
+                overflow-x: hidden;
+                gap: 50px;
+                scroll-behavior: smooth;
+                .card {
+                    border: 1px solid $c-primary-text;
+                    min-height: 560px;
+                    font-size: 1.625em;
+                    display: flex;
+                    flex-direction: column;
+                    @include lt-sm {
+                        min-height: 400px;
+                    }
+                    p {
+                        width: 80%;
+                        margin: 1em auto;
+                    }
+                    img {
+                        @include lt-sm {
+                            width: 300px;
+                        }
+                        width: 462px;
+                    }
+                }
+            }
+            .slider-controls {
+                display: flex;
+                margin: 5em auto auto auto;
+                gap: 2em;
+                a {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

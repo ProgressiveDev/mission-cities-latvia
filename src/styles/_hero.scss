@@ -1,0 +1,115 @@
+@import "_colors.scss";
+
+@keyframes slidein {
+    from {
+        transform: translateY(-20%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+#hero {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 12em;
+    .container {
+        display: flex;
+        padding-left: 1em;
+        padding-right: 1em;
+        @include lt-md {
+            flex-direction: column-reverse;
+            font-size: 0.8em;
+        }
+        @include lt-sm {
+            font-size: 0.6em;
+        }
+        .col {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            @include lt-md {
+                text-align: center;
+            }
+            h2,
+            p {
+                max-width: 90%;
+                @include lt-md {
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+            h2 {
+                color: $c-primary-accent;
+                font-size: 3.875em;
+                font-weight: 400;
+                line-height: 1em;
+            }
+            p {
+                font-size: 2.125em;
+                margin-top: 1em;
+            }
+            img {
+                width: 100%;
+                max-width: 760px;
+                align-self: flex-end;
+                margin-top: 0;
+                margin-bottom: auto;
+                @include lt-md {
+                    align-self: center;
+                    max-width: 460px;
+                    width: 80%;
+                    margin-bottom: 5em;
+                }
+            }
+            .slider-controls {
+                display: flex;
+                gap: 2em;
+                margin-top: 5em;
+                @include lt-md {
+                    justify-content: center;
+                }
+                a {
+                    cursor: pointer;
+
+                    img {
+                        max-width: 8em;
+                        @include lt-md {
+                            max-width: 12em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .main-cta {
+        color: $c-primary-dark;
+        background-color: $c-primary-accent;
+        text-decoration: none;
+        font-size: 1.2em;
+        width: 100%;
+        max-width: 12em;
+        text-align: center;
+        min-height: 4em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5em;
+        margin-top: 2em;
+        text-transform: uppercase;
+        font-weight: 500;
+        @include lt-md {
+            align-self: center;
+            font-size: 1.5em;
+        }
+    }
+    .entry {
+        animation: slideIn 1s;
+    }
+    .highlight {
+        color: $c-primary-text;
+    }
+}

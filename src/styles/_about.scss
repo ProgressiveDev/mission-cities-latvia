@@ -1,0 +1,44 @@
+#about {
+    padding-left: 1em;
+    padding-right: 1em;
+    .container {
+        display: flex;
+        margin: auto;
+        justify-content: space-between;
+        @include lt-md {
+            flex-direction: column;
+            font-size: 0.8em;
+        }
+        .col {
+            &.left {
+                display: flex;
+                align-items: center;
+                width: 55%;
+                @include lt-md {
+                    width: 100%;
+                }
+                h2 {
+                    color: $c-primary-accent;
+                    font-size: 4em;
+                    font-weight: 300;
+                    line-height: 1em;
+                }
+            }
+            &.right {
+                width: 35%;
+                display: flex;
+                @include lt-md {
+                    width: 100%;
+                    margin-top: 5em;
+                }
+                img {
+                    width: 100%;
+                    max-width: 412px;
+                }
+            }
+        }
+    }
+    .highlight {
+        color: $c-primary-text;
+    }
+}
