@@ -1,56 +1,44 @@
-const heroSlides = document.querySelectorAll('#hero [data-slide]');
-const sliderControlNext = document.querySelectorAll('#hero [data-slider-next]');
-const sliderControlPrev = document.querySelectorAll('#hero [data-slider-prev]');
+const hero = document.querySelector('#hero');
+const heroSlides = document.querySelectorAll('.hero [data-slide]');
+const sliderControlNext = document.querySelector('.hero [data-slider-next]');
+const sliderControlPrev = document.querySelector('.hero [data-slider-prev]');
+const slideWidth = heroSlides[0].clientWidth;
+const slideMaxWidth = heroSlides.length * slideWidth;
+let currentSlidePos = 0;
 
-const startingSlideIdx = 0;
-let currentSlideIdx = startingSlideIdx;
-const slideCount = heroSlides.length
+sliderControlPrev.style.opacity = '0.4'
 
-heroSlides.forEach((slide,i) => {
-    if (i !== startingSlideIdx) {
-        slide.classList.add('hide')
+const setSlideNext = () => {
+    let newSliderScrollPos = currentSlidePos + slideWidth;
+    if (newSliderScrollPos >= slideMaxWidth - slideWidth) {
+        sliderControlNext.style.opacity = '0.4'
     }
+    if (newSliderScrollPos >= slideMaxWidth) {
+        return;
+
+    }
+    sliderControlPrev.style.opacity = '1'
+    currentSlidePos = newSliderScrollPos;
+    hero.scrollTo(currentSlidePos,0)
+}
+
+const setSlidePrev = () => {
+    let newSliderScrollPos = currentSlidePos - slideWidth;
+    if (newSliderScrollPos < slideWidth) {
+        sliderControlPrev.style.opacity = '0.4'
+    }
+    if (newSliderScrollPos < 0) {
+        return;
+    }
+
+    sliderControlNext.style.opacity = '1'
+    currentSlidePos = newSliderScrollPos;
+    hero.scrollTo(newSliderScrollPos,0);
+}
+
+sliderControlNext.addEventListener('click',() => {
+    setSlideNext()
 })
-
-const getNextSlide = () => {
-    if (currentSlideIdx === slideCount) {
-        return heroSlides.item(slideCount - 1);
-    }
-    return heroSlides.item(currentSlideIdx + 1);
-}
-
-const getPrevSlide = () => {
-    if (currentSlideIdx === 0) {
-        return heroSlides.item(0);
-    }
-    return heroSlides.item(currentSlideIdx - 1);
-}
-
-const setNextSlide = () => {
-    const currentSlide = heroSlides.item(currentSlideIdx);
-    if (currentSlideIdx < slideCount - 1) {
-        currentSlide.classList.add('hide');
-        getNextSlide().classList.remove('hide');
-        currentSlideIdx++;
-    }
-}
-
-const setPrevSlide = () => {
-    const currentSlide = heroSlides.item(currentSlideIdx);
-    currentSlide.classList.add('hide');
-    getPrevSlide().classList.remove('hide');
-    if (currentSlideIdx > 0) {
-        currentSlideIdx--;
-    }
-}
-
-sliderControlNext.forEach(control => {
-    control.addEventListener('click',() => {
-        setNextSlide();
-    })
-})
-sliderControlPrev.forEach(control => {
-    control.addEventListener('click',() => {
-        setPrevSlide();
-    })
+sliderControlPrev.addEventListener('click',() => {
+    setSlidePrev()
 })

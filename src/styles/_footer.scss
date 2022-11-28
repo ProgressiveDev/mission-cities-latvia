@@ -1,5 +1,22 @@
 @import "_colors.scss";
+@import "_media-queries.scss";
 .footer_ {
     padding: 7em 1em;
     background-color: $c-secondary-accent;
+    display: flex;
+    &_container {
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        @include lt-sm {
+            align-items: center;
+            flex-direction: column;
+            gap: 2em;
+        }
+        &_col {
+            display: flex;
+            align-items: flex-end;
+        }
+    }
 }

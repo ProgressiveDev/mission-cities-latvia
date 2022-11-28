@@ -1,27 +1,73 @@
 @import "_colors.scss";
+@import "_media-queries.scss";
 
-@keyframes slidein {
-    from {
-        transform: translateY(-20%);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-}
-
-#hero {
+.hero {
     width: 100%;
     display: flex;
-    justify-content: center;
+    margin: 0 auto;
     padding-top: 12em;
+    overflow-x: hidden;
+    max-width: $screen-md-max;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    &.controls {
+        padding-top: 2em;
+        overflow: unset;
+        @include lt-md {
+            display: flex;
+            justify-content: center;
+            padding-top: 0.5em;
+        }
+        .slider-controls {
+            display: flex;
+            gap: 2em;
+            padding-left: 1em;
+            padding-right: 1em;
+            @include lt-md {
+                justify-content: center;
+                font-size: 0.8em;
+            }
+            a {
+                cursor: pointer;
+                height: 4.375em;
+                img {
+                    width: 8em;
+                    @include lt-md {
+                        max-width: 12em;
+                    }
+
+                    &.prev {
+                        transform: rotate(-180deg);
+                        &.removed {
+                            animation: none;
+                            opacity: 0.4;
+                            transform: rotate(-180deg);
+                        }
+                    }
+                    &.removed {
+                        opacity: 0.4;
+                    }
+                }
+            }
+        }
+    }
+    .slide {
+        scroll-snap-align: start;
+        min-width: 100%;
+    }
     .container {
         display: flex;
         padding-left: 1em;
         padding-right: 1em;
+        align-items: center;
+        width: 100%;
         @include lt-md {
             flex-direction: column-reverse;
             font-size: 0.8em;
+            align-items: center;
         }
         @include lt-sm {
             font-size: 0.6em;
@@ -30,8 +76,19 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
+            .content {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: flex-start;
+                @include lt-md {
+                    min-height: 300px;
+                    align-items: center;
+                }
+            }
             @include lt-md {
+                align-items: center;
                 text-align: center;
             }
             h2,
@@ -54,7 +111,7 @@
             }
             img {
                 width: 100%;
-                max-width: 760px;
+                max-width: 560px;
                 align-self: flex-end;
                 margin-top: 0;
                 margin-bottom: auto;
@@ -63,24 +120,6 @@
                     max-width: 460px;
                     width: 80%;
                     margin-bottom: 5em;
-                }
-            }
-            .slider-controls {
-                display: flex;
-                gap: 2em;
-                margin-top: 5em;
-                @include lt-md {
-                    justify-content: center;
-                }
-                a {
-                    cursor: pointer;
-
-                    img {
-                        max-width: 8em;
-                        @include lt-md {
-                            max-width: 12em;
-                        }
-                    }
                 }
             }
         }
@@ -102,7 +141,7 @@
         text-transform: uppercase;
         font-weight: 500;
         @include lt-md {
-            align-self: center;
+            // align-self: center;
             font-size: 1.5em;
         }
     }

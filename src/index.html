@@ -13,7 +13,8 @@
 <body>
     <div id="nav">
         <nav class="nav_">
-            <img class="nav__logo" src="assets/images/logo.svg" />
+            <img class="nav__logo" src="assets/images/logo.svg"
+                onclick="window.scrollTo({top: 0, behavior: 'smooth'})" />
             <ul class="nav__links">
                 <li class="nav__link">
                     <a href="#partner-vefresh">
@@ -52,25 +53,19 @@
             </label>
         </nav>
     </div>
-    <div id="hero">
+    <div id="hero" class="hero">
         <div class="slide" data-slide>
             <div class="container">
                 <div class="col">
-                    <h2 class="heading">
-                        160 000 EUR funding for startups.
-                    </h2>
-                    <p>
-                        Leading urban mobility and Water innovation pre-accelerator in Baltics
-                    </p>
-                    <a class="main-cta" href="">
-                        Apply now
-                    </a>
-                    <div class="slider-controls">
-                        <a data-slider-prev>
-                            <img src="assets/images/btn-prev.png" />
-                        </a>
-                        <a data-slider-next>
-                            <img src="assets/images/btn-next.png" />
+                    <div class="content">
+                        <h2 class="heading">
+                            160 000 EUR funding for startups.
+                        </h2>
+                        <p>
+                            Leading urban mobility and Water innovation pre-accelerator in Baltics
+                        </p>
+                        <a class="main-cta" href="#contact">
+                            Apply now
                         </a>
                     </div>
                 </div>
@@ -82,17 +77,11 @@
         <div class="slide" data-slide>
             <div class="container">
                 <div class="col">
-                    <h2 class="heading">
-                        Largest Smart city and 5G testbed <span class="highlight">for startups, communities and
-                            corporates</span>
-                    </h2>
-                    <div class="slider-controls">
-                        <a data-slider-prev>
-                            <img src="assets/images/btn-prev.png" />
-                        </a>
-                        <a data-slider-next>
-                            <img src="assets/images/btn-next.png" />
-                        </a>
+                    <div class="content">
+                        <h2 class="heading">
+                            Largest Smart city and 5G testbed <span class="highlight">for startups, communities and
+                                corporates</span>
+                        </h2>
                     </div>
                 </div>
                 <div class="col">
@@ -103,24 +92,28 @@
         <div class="slide" data-slide>
             <div class="container">
                 <div class="col">
-                    <h2 class="heading">
-                        <span class="highlight">Everything to accelerate</span> <br>mobility and climate innovation in
-                        Latvia.
-                    </h2>
-
-                    <div class="slider-controls">
-                        <a data-slider-prev>
-                            <img src="assets/images/btn-prev.png" />
-                        </a>
-                        <a data-slider-next>
-                            <img src="assets/images/btn-next.png" />
-                        </a>
+                    <div class="content">
+                        <h2 class="heading">
+                            <span class="highlight">Everything to accelerate</span> <br>mobility and climate innovation
+                            in
+                            Latvia.
+                        </h2>
                     </div>
                 </div>
                 <div class="col">
                     <img src="assets/images/hero-3.png" />
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="hero controls">
+        <div class="slider-controls">
+            <a data-slider-prev>
+                <img class="prev" src="assets/images/btn-next.png" />
+            </a>
+            <a data-slider-next>
+                <img src="assets/images/btn-next.png" />
+            </a>
         </div>
     </div>
     <div class="line">
@@ -202,7 +195,7 @@
             </div>
             <div class="slider-controls">
                 <a data-slider-prev>
-                    <img src="assets/images/btn-prev.png" />
+                    <img class="prev" src="assets/images/btn-next.png" />
                 </a>
                 <a data-slider-next>
                     <img src="assets/images/btn-next.png" />
@@ -214,7 +207,7 @@
     </div>
     <div class="get-involved">
         <div class="container">
-            <h2>Climate-neutral smart city - <br />a place for new housing</h2>
+            <h2>Take action by joining one of our causes to drive climate innovation.</h2>
         </div>
         <div class="container list">
             <div class="advantage">
@@ -258,7 +251,7 @@
                     Nearly 70 000 people call Liepaja their place of home, work or study, ranking it in the top 10
                     largest cities in the Baltics.
                     <br><br>
-                    Surrounded by lakes and the sea, it’s a modern city with global ambition and small-town convenience.
+                    Surrounded by lakes and the sea, it's a modern city with global ambition and small-town convenience.
                     The urban environment is ideal for living, leisure and business.
                 </p>
                 <a href="https://liepaja.lv" target="_blank">liepaja.lv</a>
@@ -322,7 +315,7 @@
             </div>
             <div class="slider-controls">
                 <a data-slider-prev>
-                    <img src="assets/images/btn-prev.png" />
+                    <img class="prev" src="assets/images/btn-next.png" />
                 </a>
                 <a data-slider-next>
                     <img src="assets/images/btn-next.png" />
@@ -332,7 +325,8 @@
     </div>
     <div class="get-involved">
         <div class="container">
-            <h2>Climate-neutral smart city - <br />a place for new housing</h2>
+            <h2>Explore our opportunities for startups or take part in other projects promoting a climate-neutral
+                Liepaja.</h2>
         </div>
         <div class="container list">
             <div class="advantage">
@@ -467,7 +461,7 @@
             </div>
             <div class="slider-controls">
                 <a data-slider-prev>
-                    <img src="assets/images/btn-prev.png" />
+                    <img class="prev" src="assets/images/btn-next.png" />
                 </a>
                 <a data-slider-next>
                     <img src="assets/images/btn-next.png" />
@@ -477,7 +471,7 @@
     </div>
     <div class="get-involved">
         <div class="container">
-            <h2>Climate-neutral smart city - <br />a place for new housing</h2>
+            <h2>Get involved by participating or investing to reach Riga’s greenhouse-gas-emission reduction goals.</h2>
         </div>
         <div class="container list">
             <div class="advantage">
@@ -643,11 +637,13 @@
     </div>
     <div class="footer_">
         <div class="container footer__container">
-            <div class="footer__container_col_left">
-
+            <div class="footer__container_col _left">
+                <img src="assets/images/footer-logo.svg" />
             </div>
-            <div class="footer__container_col_right">
-
+            <div class="footer__container_col _right">
+                <p>
+                    All rights reserved
+                </p>
             </div>
         </div>
     </div>
