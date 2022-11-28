@@ -20,6 +20,7 @@
     width: 100%;
     background-color: $c-primary-dark;
     transition: all 0.5s;
+    z-index: 9;
     &.sticky {
         top: 0 !important;
     }
